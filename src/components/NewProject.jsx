@@ -1,5 +1,25 @@
+import { useRef } from "react"
 import Input from "./InputFild.jsx"
 export default function NewProject() {
+
+    const model = useRef ; 
+
+    const title = useRef();
+    const description = useRef();
+    const dueDate = useRef();
+
+    function handleSave() {
+        const enterTitle = title.current.value ; 
+        const enterDescription = description.current.value ; 
+        const enterDueDate = dueDate.current.value ; 
+
+        
+    }
+
+
+
+
+
     return (
         <>
             <div className="w-[32rem] mt-16">

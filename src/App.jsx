@@ -6,8 +6,8 @@ import NewProject from './components/NewProject.jsx'
 
 function App() {
   const [projectState, setProjectState] = useState({
-    selectedProjectId : undefined ,
-    project : [] ,
+    selectedProjectId: undefined,
+    project: [],
   })
 
   // add project function 
@@ -15,7 +15,7 @@ function App() {
     setProjectState(prevState => {
       return {
         ...prevState,
-        selectedProjectId : null
+        selectedProjectId: null
       }
     })
   }
@@ -24,12 +24,12 @@ function App() {
     setProjectState(prevState => {
       return {
         ...prevState,
-        selectedProjectId : undefined
+        selectedProjectId: undefined
       }
     })
   }
-  let context ;
-console.log(projectState);
+  let context;
+  console.log(projectState);
 
   if (projectState.selectedProjectId === null) {
     context = <NewProject />
@@ -42,12 +42,13 @@ console.log(projectState);
   return (
     <>
       <main className='flex gap-8 my-8 h-screen'>
-      <Sidebar onStartAddProject={handleStartAddProject}/>
-
-      {/* <NoProjectSelected/> */}
-      {/* <NewProject /> */}
-      {context}
         
+        <Sidebar onStartAddProject={handleStartAddProject} />
+
+        {/* <NoProjectSelected/> */}
+        {/* <NewProject /> */}
+        {context}
+
       </main>
     </>
   )
