@@ -31,6 +31,15 @@ function App() {
   let context;
   console.log(projectState);
 
+  function handleSelectProject(id) {
+    setProjectState(prevState => {
+      return {
+        ...prevState,
+        selectedProjectId : id
+      }
+    })
+  }
+
 
  function handleAndProject({ title, description, dueDate }) {
     setProjectState(prevState => {
@@ -62,7 +71,7 @@ function App() {
     <>
       <main className='flex gap-8 my-8 h-screen'>
 
-        <Sidebar onStartAddProject={handleStartAddProject} projects={projectState.project} />
+        <Sidebar onStartAddProject={handleStartAddProject} projects={projectState.project} onSelectedProject={handleSelectProject} />
 
         {/* <NoProjectSelected/> */}
         {/* <NewProject /> */}
