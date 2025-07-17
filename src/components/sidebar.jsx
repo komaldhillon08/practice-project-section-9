@@ -1,5 +1,5 @@
 import Button from "./Button.jsx"
-export default function Sidebar({onStartAddProject}) {
+export default function Sidebar({onStartAddProject , projects }) {
     console.log(">>>>>>>>>>>>>>>addProject" , onStartAddProject);
     
     return (

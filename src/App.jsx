@@ -31,8 +31,27 @@ function App() {
   let context;
   console.log(projectState);
 
+
+ function handleAndProject({ title, description, dueDate }) {
+    setProjectState(prevState => {
+      const projectId = Math.random()
+      const newProject = {
+        id: projectId,
+        title,
+        description,
+        dueDate
+      }
+      return {
+        ...prevState,
+        selectedProjectId: undefined,
+        project: [...prevState.project, newProject]
+      }
+    })
+  }
+
+
   if (projectState.selectedProjectId === null) {
-    context = <NewProject />
+    context = <NewProject onAdd={handleAndProject}  />
   }
   else if (projectState.selectedProjectId === undefined) {
     context = <NoProjectSelected onStartAddProject={handleStartAddProject} />
@@ -42,8 +61,8 @@ function App() {
   return (
     <>
       <main className='flex gap-8 my-8 h-screen'>
-        
-        <Sidebar onStartAddProject={handleStartAddProject} />
+
+        <Sidebar onStartAddProject={handleStartAddProject} projects={projectState.project} />
 
         {/* <NoProjectSelected/> */}
         {/* <NewProject /> */}
