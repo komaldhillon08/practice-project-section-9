@@ -34,7 +34,7 @@ export default function NewProject({onAdd}) {
 
     return (
         <>
-            <Model btnCaption="close">
+            <Model  btnCaption="close">
                 <h2 className="text-red-500" >Input invalid</h2>
                 <p className="text-red-500" >Check your input</p>
             </Model>
