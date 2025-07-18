@@ -28,9 +28,11 @@ function App() {
       }
     })
   }
-  let context;
+
   // console.log(projectState);
 
+
+  // 
   function handleSelectProject(id) {
     setProjectState(prevState => {
       return {
@@ -58,9 +60,12 @@ function App() {
     })
   }
 
+  
+  let context;
+
 
   if (projectState.selectedProjectId === null) {
-    context = <NewProject onAdd={handleAndProject}  />
+    context = <NewProject onAdd={handleAndProject} onCancle={handleStartCancleProject} />
   }
   else if (projectState.selectedProjectId === undefined) {
     context = <NoProjectSelected onStartAddProject={handleStartAddProject} />
@@ -83,5 +88,5 @@ function App() {
     </>
   )
 }
-
+ 
 export default App

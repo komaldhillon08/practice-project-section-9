@@ -2,7 +2,7 @@ import { useRef } from "react"
 import Input from "./InputFild.jsx"
 import Model from "./Model.jsx";
 
-export default function NewProject({ onAdd }) {
+export default function NewProject({ onAdd , onCancle }) {
 
     const modal = useRef();
 
@@ -43,7 +43,7 @@ export default function NewProject({ onAdd }) {
                     <li>
                         <button
                             className="bg-stone-600 text-stone-50 py-1 px-4 rounded-md 
-                            font-bold cursor-pointer">Cancle</button>
+                            font-bold cursor-pointer" onClick={onCancle} >Cancle</button>
                     </li>
                     <li>
                         <button
