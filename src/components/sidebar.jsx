@@ -1,6 +1,6 @@
 import Button from "./Button.jsx"
-export default function Sidebar({ onStartAddProject, projects , onSelectedProject}) {
-    console.log(">>>>>>>>>>>>>>>addProject", onStartAddProject);
+export default function Sidebar({ onStartAddProject, projects, onSelectedProject }) {
+    // console.log(">>>>>>>>>>>>>>>addProject", onStartAddProject);
 
     return (
         <>
@@ -13,7 +13,8 @@ export default function Sidebar({ onStartAddProject, projects , onSelectedProjec
                     {projects.map((project) =>
                         <li key={project.id}>
                             <button className="w-full text-left py-2 px-1 rounded-md my-1 text-stone-400
-                             hover:text-stone-200 hover:bg-stone-800" onClick={() => onSelectedProject(project.id)} >{project.title}</button>
+                             hover:text-stone-200 hover:bg-stone-800"
+                                onClick={() => onSelectedProject(project.id)} >{project.title}</button>
                         </li>)}
                 </ul>
             </aside>

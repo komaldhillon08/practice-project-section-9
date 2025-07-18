@@ -2,7 +2,7 @@ import { useRef } from "react"
 import Input from "./InputFild.jsx"
 import Model from "./Model.jsx";
 
-export default function NewProject({onAdd}) {
+export default function NewProject({ onAdd }) {
 
     const model = useRef;
 
@@ -11,13 +11,17 @@ export default function NewProject({onAdd}) {
     const dueDate = useRef();
 
     function handleSave() {
-    
-         const enteredTitle = title.current.value;
+
+        const enteredTitle = title.current.value;
         const enteredDescription = description.current.value;
         const enteredDueDate = dueDate.current.value;
 
-        if (enteredTitle.trim() === "" || enteredDescription.trim() === "" || enteredDueDate.trim() === "") {
+        if (enteredTitle.trim() === "" ||
+            enteredDescription.trim() === "" ||
+            enteredDueDate.trim() === "") {
+
             model.current.open();
+            
             return
         }
         onAdd({
@@ -34,7 +38,7 @@ export default function NewProject({onAdd}) {
 
     return (
         <>
-            <Model  btnCaption="close">
+            <Model btnCaption="close">
                 <h2 className="text-red-500" >Input invalid</h2>
                 <p className="text-red-500" >Check your input</p>
             </Model>
