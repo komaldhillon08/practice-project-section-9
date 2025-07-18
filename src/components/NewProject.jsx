@@ -4,7 +4,7 @@ import Model from "./Model.jsx";
 
 export default function NewProject({ onAdd }) {
 
-    const model = useRef;
+    const modal = useRef();
 
     const title = useRef();
     const description = useRef();
@@ -20,8 +20,8 @@ export default function NewProject({ onAdd }) {
             enteredDescription.trim() === "" ||
             enteredDueDate.trim() === "") {
 
-            model.current.open();
-            
+            modal.current.open();
+
             return
         }
         onAdd({
@@ -32,13 +32,9 @@ export default function NewProject({ onAdd }) {
 
     }
 
-
-
-
-
     return (
         <>
-            <Model btnCaption="close">
+            <Model ref={modal} btnCaption="close">
                 <h2 className="text-red-500" >Input invalid</h2>
                 <p className="text-red-500" >Check your input</p>
             </Model>

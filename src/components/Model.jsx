@@ -6,8 +6,9 @@ export default forwardRef(function Model({ children, btnCaption, }, ref) {
     const dialog = useRef();
     useImperativeHandle(ref, () => {
         return {
-            open() {
-                dialog.current.showModal();
+            open(){
+                 dialog.current.showModal()
+
             }
         }
     })
